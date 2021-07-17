@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 function getDrinks(){
     let searchValue = document.getElementById("searchValue").value
-    let drinkList = document.getElementById("recipes")
+    let drinkList = document.getElementById("Cocktail")
     // console.log(searchValue)
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchValue}`)
     .then(res => res.json())
@@ -23,8 +23,18 @@ function getDrinks(){
         {for(i = 0; i < results.drinks.length; i++){
             drinkList.innerHTML += `
                 <li>
-                    <a href=#>${results.drinks[i].strDrink}</a>
+                    <a href=# data-id>${results.drinks[i].strDrink}</a>
                 </li> `
         
-    }})}
+    }})
+    dataset.id.addEventListener('click', getRecipe)
+}
+function getRecipe(){
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchValue}")
+    .then(res => res.json())
+    .then(results => {
+        results.drinks[`${dataset-id}`].str
+    })
+}
 
+//${dataset-id} to call the data-id in the a tag
