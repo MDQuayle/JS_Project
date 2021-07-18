@@ -2,13 +2,13 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed')})
+    document.getElementById('search').addEventListener('submit', (event) => {
+        event.preventDefault();
+        search.reset()
+        document.getElementById('submit').addEventListener('click', getBreweries)
+    })
 
-const search = document.querySelector('form')
-search.addEventListener('submit', (event) => {
-    event.preventDefault();
-    search.reset()
-    document.getElementById('submit').addEventListener('click', getBreweries)
+
 //preventDefault() is to prevent the page from automatically reloading when the submit button is hit
 //search.reset() emptys the text field after submitting
         
@@ -17,16 +17,22 @@ search.addEventListener('submit', (event) => {
 
 function getBreweries(){
     let searchValue = document.getElementById("searchValue").value
-    let drinkList = document.getElementById("Breweries")
-    // console.log(searchValue)
-    fetch("https://api.openbrewerydb.org/breweries")
+    let brewList = document.getElementById("Breweries")
+    brewList.innerHTML = ''
+    fetch(`https://api.openbrewerydb.org/breweries/search?query=${searchValue}`)
     .then(res => res.json())
     .then(results => 
-        {for(i = 0; i < results.drinks.length; i++){
-            drinkList.innerHTML += `
+        {for(i = 0; i < results.length; i++){
+            brewList.innerHTML += `
                 <li>
-                    <a href=# data-id>${results.drinks[i].strDrink}</a>
+                <p>Name: ${results[i].name}</p>
+                <p>Street: ${results[i].street}</p>
+                <p>City: ${results[i].city}</p>
+                <p>State: ${results[i].state}</p>
+                <p><a href=${results[i].website_url}>Website</a></p>
                 </li> `
         
-    }})}
+        
+        }})
+}
 //${dataset-id} to call the data-id in the a tag

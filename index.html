@@ -2,21 +2,25 @@
 <html lang=eng>
     <head>
         <meta charset="utf-8">
-        <title>Find Local Breweries</title>
+        <title>Find Breweries</title>
         <script src="src/index.js" charset="utf-8"></script>
         <link rel="stylesheet" href="src/style.css">
       </head>
 <body>
 
-<h1>Search by state</h1>
+<h1>Find Breweries!</h1>
+<h3>You can search by keyword, city, state, or five digit zip code! </h3>
 <form id="search" action="action_page.php">
-    <input type="text" id="searchValue" placeholder="Where are you looking?" name="search">
-    <button type="submit" id="submit">Submit</button>
+    <input type="text" id="searchValue" placeholder="What are you looking for?" name="search">
+    <button type="submit" id="submit">Search</button>
   </form>
 <div>
     <ul id="Breweries">
 
     </ul>
+</div>
+<div id="chart">
+
 </div>
 
 </body>
