@@ -2,19 +2,18 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    searchFeature()
+    })
+function searchFeature(){
     document.getElementById('search').addEventListener('submit', (event) => {
         event.preventDefault();
         search.reset()
         document.getElementById('submit').addEventListener('click', getBreweries)
-    })
-
+})};
 
 //preventDefault() is to prevent the page from automatically reloading when the submit button is hit
 //search.reset() emptys the text field after submitting
         
-});
-
-
 function getBreweries(){
     let searchValue = document.getElementById("searchValue").value
     let brewList = document.getElementById("Breweries")
@@ -25,11 +24,11 @@ function getBreweries(){
         {for(i = 0; i < results.length; i++){
             brewList.innerHTML += `
                 <li>
-                <p>Name: ${results[i].name}</p>
-                <p>Street: ${results[i].street}</p>
-                <p>City: ${results[i].city}</p>
-                <p>State: ${results[i].state}</p>
-                <p><a href=${results[i].website_url}>Website</a></p>
+                <p><span style ="font-weight: bolder;">Name: </span><span>${results[i].name}</span></p>
+                <p><span style ="font-weight: bolder;">Street: </span><span>${results[i].street}</span></p>
+                <p><span style ="font-weight: bolder;">City: </span><span>${results[i].city}</span></p>
+                <p><span style ="font-weight: bolder;">State: </span><span>${results[i].state}</span></p>
+                <p style ="font-weight: bolder;"><a href=${results[i].website_url}>Website</a></p>
                 </li> `
         
         
