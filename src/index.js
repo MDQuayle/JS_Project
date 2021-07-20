@@ -31,7 +31,8 @@ function getBreweries(){
                 <p style ="font-weight: bolder;"><a href=${results[i].website_url}>Website</a></p>
                 </li> `
         
-        
         }})
 }
+
+//document.getElementById("myDiv").style.border = "thick solid #0000FF";
 //${dataset-id} to call the data-id in the a tag
