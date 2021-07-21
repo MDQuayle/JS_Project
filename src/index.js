@@ -1,15 +1,12 @@
-//DOMContentLoaded will make sure the HTML finishes downloading first before any of my JavaScript is run
-
-
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search').addEventListener('submit', (event) => {
         event.preventDefault();
+        
+        getBreweries()
         search.reset();
-        search.addEventListener('click', getBreweries)
     })})
 
-//preventDefault() is to prevent the page from automatically reloading when the submit button is hit
-//search.reset() emptys the text field after submitting
+
         
 function getBreweries(){
     let searchValue = document.getElementById("searchValue").value
@@ -18,8 +15,8 @@ function getBreweries(){
     chart.innerHTML = ""
     brewList.innerHTML = ''
     fetch(`https://api.openbrewerydb.org/breweries/search?query=${searchValue}`)
-    .then(res => res.json())
-    .then(results => 
+        .then(res => res.json())
+        .then(results => 
         {for(i = 0; i < results.length; i++){
             brewList.innerHTML += `
                 <li>
@@ -51,6 +48,3 @@ function breweryInfo(e){
         <p><a href=${results.website_url}>Website</a></p>` 
     })
 }
-
-//document.getElementById("myDiv").style.border = "thick solid #0000FF";
-//${dataset-id} to call the data-id in the a tag
