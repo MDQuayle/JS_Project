@@ -1,4 +1,4 @@
-h1 {
+#header {
     text-align: center;
 }
 form {
@@ -7,7 +7,14 @@ form {
 h3 {
     text-align: center;
 }
+h4 {
+    text-align: center;
+}
 li {
     margin-left: 30%;
     list-style-type: "\1F37A"
+}
+
+#chart {
+    margin-left: 30%;
 }
