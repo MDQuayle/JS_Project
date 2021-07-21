@@ -2,14 +2,10 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    searchFeature()
-    })
-function searchFeature(){
     document.getElementById('search').addEventListener('submit', (event) => {
         event.preventDefault();
-        search.reset()
-        document.getElementById('submit').addEventListener('click', getBreweries)
-})};
+        search.reset();
+        document.getElementById('submit').addEventListener('click', getBreweries)})})
 
 //preventDefault() is to prevent the page from automatically reloading when the submit button is hit
 //search.reset() emptys the text field after submitting
