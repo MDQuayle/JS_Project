@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('search').addEventListener('submit', (event) => {
-        event.preventDefault();
+    const search = document.getElementById('search')
+        search.addEventListener('submit', (event) => {
+            event.preventDefault();
         
-        getBreweries()
-        search.reset();
+            getBreweries()
+            search.reset();
     })})
 
 
