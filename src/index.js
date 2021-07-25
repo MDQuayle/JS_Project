@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const search = document.getElementById('search')
-        search.addEventListener('submit', (event) => {
-            event.preventDefault();
+    search.addEventListener('submit', (event) => {
+        event.preventDefault();
         
-            getBreweries()
-            search.reset();
+        getBreweries()
+        search.reset();
     })})
 
 
@@ -64,5 +64,5 @@ function breweryInfo(e){
     })
     
   })
-s
+
 }
