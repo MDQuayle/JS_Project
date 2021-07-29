@@ -1,6 +1,8 @@
 # JS_Project
 Find Breweries App
+
 Run app in browser through the index.html file
+
 App takes a search request, inputs the request into a fetch, and returns a list of breweries that fit the search. 
 These breweries are populated as links that are clickable and when clicked return further details of the brewery.
 With the further details is a comment section that allows multiple comments to me added to the page
